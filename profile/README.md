@@ -11,4 +11,4 @@ datRail brings enterprise-grade data and infrastructure security best practices 
 datRail operates at the intersection of open-source innovation and enterprise cybersecurity:
 
 * Sponsored by [RailXia](https://railxia.com): As an enterprise cybersecurity startup, RailXia acts as the primary sponsor and commercial steward of the datRail organization. RailXia invests directly into datRail's open-source codebase, maintaining its core architecture and ensuring the project remains freely accessible, transparent, and robust for the broader developer community.
-* Collaboration with [Eunomia](https://eunomia.dev): Built in deep collaboration with the Eunomia open-source community, datRail leverages Eunomia’s eBPF tools to enable light-weight introspection/observability for applicable AI workloads.
+* Collaboration with [Eunomia](https://eunomia.dev): Built in deep collaboration with the [Eunomia open-source community](https://eunomia.dev/), datRail leverages Eunomia’s eBPF tools to enable light-weight introspection/observability for applicable AI workloads.
