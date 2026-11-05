@@ -2,24 +2,30 @@ DatRail is an open-source project and organization building tools that learn wha
 
 ## 🚀 Start here
 
-**[datrail-project](https://github.com/datrail/datrail-project#readme)** runs the open-source DatRail stack on your own machine with one command:
+**[datrail-project](https://github.com/datrail/datrail-project#readme)** runs the open-source DatRail stack on your own machine. Already running an agent in a container? One command installs DatRail and points it at your agent, asking which one:
 
 ```bash
-git clone --recursive https://github.com/datrail/datrail-project.git
+curl -fsSL https://raw.githubusercontent.com/datrail/datrail-project/master/install.sh | bash
+```
+
+Or clone the repository and start the stack with its demo agent:
+
+```bash
+git clone https://github.com/datrail/datrail-project.git
 cd datrail-project
 docker compose up -d
 ```
 
-Then open <http://127.0.0.1:8000>. RailMon watches an agent and delivers its evidence to RailDash automatically; you lock a baseline and see drift as it happens. The [install guide](https://github.com/datrail/datrail-project/blob/master/INSTALL.md) has the details, and the [glossary](https://github.com/datrail/datrail-project/blob/master/docs/glossary.md) explains the terms: evidence bundle, Agent Security Profile (ASP), baseline, alignment, drift.
+Then open <http://127.0.0.1:8000>. RailMon watches the agent and delivers its evidence to RailDash automatically; you lock a baseline and see drift as it happens. The [install guide](https://github.com/datrail/datrail-project/blob/master/INSTALL.md) has the details, with step-by-step pages for a [Mac](https://github.com/datrail/datrail-project/blob/master/docs/setup-mac.md) and for [Windows](https://github.com/datrail/datrail-project/blob/master/docs/setup-windows.md), and a page an [AI agent can follow](https://github.com/datrail/datrail-project/blob/master/docs/agent-install.md) to do the install for you. The [glossary](https://github.com/datrail/datrail-project/blob/master/docs/glossary.md) explains the terms: evidence bundle, Agent Security Profile (ASP), baseline, alignment, drift.
 
 ## 🧩 Components
 
 | Repository | What it does |
 | --- | --- |
-| [datrail-project](https://github.com/datrail/datrail-project#readme) | The entry point: the one-command stack, install guide and glossary. |
-| [RailMon](https://github.com/datrail/railmon#readme) | Collects evidence about a running agent: its TLS traffic, the ports it opens, and periodic scans of its environment, delivered as evidence bundles. |
-| [RailDash](https://github.com/datrail/raildash#readme) | Local dashboard. Turns evidence bundles into Agent Security Profiles (ASPs), locks baselines and shows drift. |
-| [eBPF TLS Tap](https://github.com/datrail/ebpf-tls-tap#readme) | Linux eBPF probes for TLS plaintext, listening sockets and file opens. |
+| [datrail-project](https://github.com/datrail/datrail-project#readme) | The entry point: the one-command install, the Compose stack, install guides and glossary. |
+| [RailMon](https://github.com/datrail/railmon#readme) | Collects evidence about a running agent: its TLS traffic, the ports it opens, the files it opens, and periodic scans of its environment, delivered as evidence bundles. |
+| [RailDash](https://github.com/datrail/raildash#readme) | Local dashboard. Turns evidence bundles into Agent Security Profiles (ASPs), locks baselines, shows drift and holds the Data Guardrail. |
+| [eBPF TLS Tap](https://github.com/datrail/ebpf-tls-tap#readme) | Standalone Linux eBPF probes: `sslsniff` (TLS plaintext), `listensnoop` (listening sockets) and `filesnoop` (file opens). RailMon itself records all of these with AgentSight. |
 | [DatRail Proxy](https://github.com/datrail/proxy#readme) | Sits between an agent and its MCP servers and attaches an `x-rail` identity ticket to each call. |
 | [DatRail Gateway](https://github.com/datrail/gateway#readme) | Sits in front of an MCP server, checks the `x-rail` ticket against policy, and forwards or refuses the call. |
 
