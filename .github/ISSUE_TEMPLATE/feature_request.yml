@@ -1,0 +1,36 @@
+name: Feature request
+description: Something DatRail could do that it doesn't yet.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. If you'd like to talk it through first, start a thread in [Discussions, Ideas](https://github.com/orgs/datrail/discussions/categories/ideas).
+  - type: textarea
+    id: goal
+    attributes:
+      label: What you're trying to do
+      description: The problem, in your words. For example, "I want to know when my agent sends a file to a host it hasn't used before."
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help
+      description: How you'd like DatRail to handle it, if you have an idea.
+  - type: dropdown
+    id: part
+    attributes:
+      label: Which part
+      options:
+        - Install
+        - RailMon (capture, scans, evidence bundles)
+        - RailDash (dashboard, ASPs, baselines, drift, Data Guardrail)
+        - eBPF TLS Tap
+        - Proxy or Gateway
+        - Not sure
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else
+      description: Your agent, your platform, links, screenshots.
