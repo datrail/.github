@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question
+    url: https://github.com/orgs/datrail/discussions/categories/q-a
+    about: How do I, is this expected, can DatRail do this. Ask in Discussions, Q&A.
+  - name: Report a security problem
+    url: https://github.com/datrail/railmon/security/advisories/new
+    about: Please don't open a public issue. Report it privately; SUPPORT.md lists the right repository.
+  - name: Troubleshooting
+    url: https://github.com/datrail/datrail-project/blob/master/INSTALL.md#troubleshooting
+    about: Fixes for the common install problems.

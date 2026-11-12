@@ -1,0 +1,107 @@
+name: Bug report
+description: Something in DatRail doesn't work as the docs say.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. If you have a question rather than a bug, please ask in [Discussions, Q&A](https://github.com/orgs/datrail/discussions/categories/q-a).
+
+        Logs can include what your agent sent and received. Remove tokens, keys and anything private before you paste them.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+      placeholder: |
+        I ran `docker compose up -d` and opened http://127.0.0.1:8000.
+        I expected interactions for my agent. The list stays empty.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The commands or clicks, in order, so we can try it ourselves.
+      placeholder: |
+        1. ...
+        2. ...
+  - type: dropdown
+    id: part
+    attributes:
+      label: Which part
+      options:
+        - Install (install.sh or docker compose)
+        - RailMon (capture, scans, evidence bundles)
+        - RailDash (dashboard, ASPs, baselines, drift, Data Guardrail)
+        - eBPF TLS Tap
+        - Proxy or Gateway
+        - Not sure
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Linux
+        - Windows, WSL2 with Docker Engine in the distro
+        - Windows, WSL2 with Docker Desktop
+        - macOS, Apple Silicon, Docker Desktop
+        - macOS, Intel
+        - Other (say which below)
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: How you installed
+      options:
+        - The one-command install (install.sh)
+        - Cloned datrail-project and ran docker compose up
+        - Built the images from source
+        - Other (say which below)
+    validations:
+      required: true
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Which agent DatRail is watching
+      options:
+        - The demo agent
+        - My own agent in a container
+        - An agent in an OpenShell sandbox
+        - Other (say which below)
+    validations:
+      required: true
+  - type: textarea
+    id: versions
+    attributes:
+      label: Versions
+      description: In the folder where you ran `docker compose up` (`~/datrail` if you used the one-command install, otherwise your datrail-project clone), run `docker compose images` and paste the output.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: |
+        In the same folder, run:
+        `docker compose ps`
+        `docker compose logs --tail 100 railmon-collect railmon-scan raildash`
+      render: shell
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else
+      description: Your agent (for example OpenClaw, Claude Code, Codex), settings you changed, screenshots.
+  - type: checkboxes
+    id: checked
+    attributes:
+      label: Before you send
+      options:
+        - label: I checked [Troubleshooting](https://github.com/datrail/datrail-project/blob/master/INSTALL.md#troubleshooting) in the install guide.
+          required: true
+        - label: I removed tokens, keys and private data from what I pasted.
+          required: true
