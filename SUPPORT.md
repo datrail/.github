@@ -36,6 +36,10 @@ Please don't open a public issue. Report it privately from the Security tab of t
 
 Open a feature request in the same repositories, or start a thread in [Discussions, Ideas](https://github.com/orgs/datrail/discussions/categories/ideas) if you'd like to talk it through first.
 
+## Email us
+
+For anything that doesn't fit GitHub, or if you'd rather not post in public, email [datrail-support@railxia.com](mailto:datrail-support@railxia.com). Questions and bugs are still best on GitHub, where others can find the answer later. Please report security problems privately on GitHub (above), not by email, and leave tokens, keys and logs out of emails.
+
 ## Before you paste logs
 
 Logs and evidence can include what your agent sent and received. Remove tokens, keys, file contents and anything else private before you post them.
