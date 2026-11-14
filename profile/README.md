@@ -26,8 +26,7 @@ Then open <http://127.0.0.1:8000>. RailMon watches the agent and delivers its ev
 | [RailMon](https://github.com/datrail/railmon#readme) | Collects evidence about a running agent: its TLS traffic, the ports it opens, the files it opens, and periodic scans of its environment, delivered as evidence bundles. |
 | [RailDash](https://github.com/datrail/raildash#readme) | Local dashboard. Turns evidence bundles into Agent Security Profiles (ASPs), locks baselines, shows drift and holds the Data Guardrail. |
 | [eBPF TLS Tap](https://github.com/datrail/ebpf-tls-tap#readme) | Standalone Linux eBPF probes: `sslsniff` (TLS plaintext), `listensnoop` (listening sockets) and `filesnoop` (file opens). RailMon itself records all of these with AgentSight. |
-| [DatRail Proxy](https://github.com/datrail/proxy#readme) | Sits between an agent and its MCP servers and attaches an `x-rail` identity ticket to each call. |
-| [DatRail Gateway](https://github.com/datrail/gateway#readme) | Sits in front of an MCP server, checks the `x-rail` ticket against policy, and forwards or refuses the call. |
+| [RailGuard](https://github.com/datrail/railguard#readme) | Enforces Rail Center's rules on MCP calls: a proxy beside the agents attaches each agent's `x-rail` ticket, and a gateway in front of the MCP servers judges each call against the rules (Envoy and Apigee). It replaces the earlier DatRail Proxy and Gateway repositories. |
 
 ## 🛡️ Our Mission
 
